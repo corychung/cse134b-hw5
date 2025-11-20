@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cory Chung's experience working through The Odin Project web development bootcamp.">
+    <title>The Odin Project</title>
+    <script src="/theme-picker.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">CC</a>
+            <button id="burger-menu" popovertarget="mypopover">Menu</button>
+            <ul id="mypopover" popover>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <button id="theme-picker" commandfor="themeDialog" command="show-modal" aria-label="Pick a theme" hidden>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 8.5H15.51M10.5 7.5H10.51M7.5 11.5H7.51M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 13.6569 19.6569 15 18 15H17.4C17.0284 15 16.8426 15 16.6871 15.0246C15.8313 15.1602 15.1602 15.8313 15.0246 16.6871C15 16.8426 15 17.0284 15 17.4V18C15 19.6569 13.6569 21 12 21ZM16 8.5C16 8.77614 15.7761 9 15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5ZM11 7.5C11 7.77614 10.7761 8 10.5 8C10.2239 8 10 7.77614 10 7.5C10 7.22386 10.2239 7 10.5 7C10.7761 7 11 7.22386 11 7.5ZM8 11.5C8 11.7761 7.77614 12 7.5 12C7.22386 12 7 11.7761 7 11.5C7 11.2239 7.22386 11 7.5 11C7.77614 11 8 11.2239 8 11.5Z" stroke="#4848a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+      <article>
+        <h1>The Odin Project: Web Dev Bootcamp</h1>
+          <picture>
+              <source srcset="/media/images/odin/odin-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/odin/odin-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/odin/odin-2000.webp" type="image/webp">
+              <img width="1200" height="630" src="/media/images/odin/odin.png" alt="Logo for The Odin Project web dev bootcamp">
+          </picture>
+        <section>
+          <h2>What is the Odin Project?</h2>
+          <p>The Odin Project is a free, open-source bootcamp for full-stack web development. I worked on the Foundations and Java course over the summer of 2024.</p>
+        </section>
+        <section>
+          <h2>Inspiration</h2>
+          <p>I had always known about The Odin Project ever since high school, but I had never taken the time to fully commit and actually complete the course. I remember multiple times where I had attempted to do so, but only got about one or two projects in. But this summer, I really wanted to commit to learning frontend web dev in order to have it supplement my work in UI/UX, so I got to work setting aside intentional 1 hour daily blocks to get it done.</p>
+        </section>
+        <section>
+          <h2>My Projects</h2>
+          <p>The Odin Project (also known as TOP) is heavy on the project development side, advocating for learning and then true application of knowledge through open-ended projects. After doing the Intermediate HTML and CSS courses and a bit of the Javascript course, here is what I've created so far, in rough order from least to most recent and selected based off of the ones I'm most proud of.</p>
+          <h3>Admin Dashboard</h3>
+          <p>Made of pure HTML and CSS, I worked here to create an admin dashboard from scratch. The project taught me mainly about CSS Grid and layouts and how to configure elements in a responsive manner. Some things I would still like to work on are how to organize my code better, but this was only the first draft and an early look into some of the projects that Odin offered. You can also check out the live site <a href="https://corychung.github.io/odin-admin-dashboard/">at this link.</a></p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/dashboard/dashboard-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/dashboard/dashboard-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/dashboard/dashboard-2000.webp" type="image/webp">
+              <img src="/media/images/dashboard/dashboard.png" alt="Screenshot of the admin dashboard project" loading="lazy">
+            </picture>
+            <figcaption>Responsive design is fun!</figcaption>
+          </figure>
+          <h3>Calculator</h3>
+          <p>Here I made a pretty simple calculator using HTML, CSS, and JS, as part of the final project of the Foundations course. I am pretty proud of how this turnt out, although I really do think I could clean up the JS logic to be a bit nicer. It was fun doing the HTML and CSS and tweaking that so that it actually feels more interactive to use. Additionally, it was a fun challenge to figure out the logic for the JS. I did a few flowcharts and used "scratch paper" to figure out the logic and then implementing it, using different states and toggles was interesting to learn. Overall this was a very fun project and it taught me a lot about JS. In the future I would like to take a second look at the logic and revamp it to be more concise and readable. Right now it is a bit of spaghetti code so I would like to take a second shot at it. You can also check out the live site <a href="https://corychung.github.io/odin-calculator/">at this link.</a></p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/calc/calc-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/calc/calc-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/calc/calc-2000.webp" type="image/webp">
+              <img src="/media/images/calc/calc.png" alt="Screenshot of the calculator app interface" loading="lazy">
+            </picture>
+            <figcaption>I like how the interface of the calculator turned out.</figcaption>
+          </figure>
+          <h3>Book Library</h3>
+          <p>Finally, I created a book library website that was meant to allow people to track books that they want to read or have read and check them off of a list. It taught me a lot about DOM manipulation, data management, and form design, and I also refactored it later on so that it would follow the "module pattern" that was outlined in the course. You can also check out the live site <a href="https://corychung.github.io/odin-library/">at this link.</a></p>  
+          <figure>
+            <picture>
+              <source srcset="/media/images/book/book-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/book/book-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/book/book-2000.webp" type="image/webp">
+              <img src="/media/images/book/book.png" alt="Screenshot of the book tracking interface" loading="lazy">
+            </picture>
+            <figcaption>Here's two books loaded on the actual library page.</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>My Experience and Review</h2>
+          <p>Overall, The Odin Project was a great way for me to begin dipping my toes into the foundations of web client languages without jumping straight into something like React or some other heavy framework. I learned a lot in the short time I spent with the course and I'd love to continue finishing up the entire course someday.</p>
+        </section>
+        <section>
+          <h2>Next Steps</h2>
+          <p>So far, as mentioned before, I was able to finish the Foundations course and a bit of the JavaScript foundations course. However, there is a much longer way to go, as the course offers more paths such as advanced HTML/CSS, React, Databases, and even NodeJS. So I definitely have a long way to go, but I am excited to continue the course and see what comes next.</p>
+        </section>
+      </article>
+    </main>
+    <footer>
+        <p>&copy; Cory Chung 2025</p>
+    </footer>
+
+    <!-- Theme Picker Dialog -->
+    <dialog id="themeDialog">
+        <header>
+            <h3>Pick a theme!</h3>
+        </header>
+        <form>
+            <input id="light" name="theme" type="radio" data-theme="light" onclick="light_theme()" checked></input>
+            <label for="light">Light</label>
+            <br>
+            <input id="dark" name="theme" type="radio" data-theme="dark" onclick="dark_theme()"></input>
+            <label for="dark">Dark</label>
+        </form>
+        <footer>
+            <button commandfor="themeDialog" command="close">Close</button>
+        </footer>
+    </dialog>
+  </body>
+</html>

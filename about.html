@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About page for Cory Chung's personal portfolio.">
+    <title>About Me</title>
+    <script src="theme-picker.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CC</a>
+            <button id="burger-menu" popovertarget="mypopover">Menu</button>
+            <ul id="mypopover" popover>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <button id="theme-picker" commandfor="themeDialog" command="show-modal" aria-label="Pick a theme" hidden>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 8.5H15.51M10.5 7.5H10.51M7.5 11.5H7.51M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 13.6569 19.6569 15 18 15H17.4C17.0284 15 16.8426 15 16.6871 15.0246C15.8313 15.1602 15.1602 15.8313 15.0246 16.6871C15 16.8426 15 17.0284 15 17.4V18C15 19.6569 13.6569 21 12 21ZM16 8.5C16 8.77614 15.7761 9 15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5ZM11 7.5C11 7.77614 10.7761 8 10.5 8C10.2239 8 10 7.77614 10 7.5C10 7.22386 10.2239 7 10.5 7C10.7761 7 11 7.22386 11 7.5ZM8 11.5C8 11.7761 7.77614 12 7.5 12C7.22386 12 7 11.7761 7 11.5C7 11.2239 7.22386 11 7.5 11C7.77614 11 8 11.2239 8 11.5Z" stroke="#4848a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <h1>About Me</h1>
+        <p>Learn more about me!</p>
+        <section class="page-section">
+        <picture>
+            <source srcset="/media/images/cory/cory-600.webp" media="(max-width: 600px)" type="image/webp">
+            <source srcset="/media/images/cory/cory-1200.webp" media="(max-width: 1200px)" type="image/webp">
+            <source srcset="/media/images/cory/cory-2000.webp" type="image/webp">
+            <img src="/media/images/cory/cory.jpg" alt="Portrait of Cory Chung">
+        </picture>
+            <section>
+                <h2>Who is Cory?</h2>
+                <p>Hi, I'm Cory. Currently a UCSD student pursuing UX design as a career path and minoring in Computer Science. However, outside of career and academia, I love making and creating things and learning more about tech. Hopefully some of my projects can give you a good idea of what I like to do in my free time, from 3D printing to frontend web dev. I'm also interested in AI and the startup world and would love to pursue opportunities related to that. Always looking for something new to make!</p>
+            </section>
+            <section>
+                <h2>Quick Stats</h2>
+                <ul>
+                    <li><b>Major: </b>Cognitive Science, spec. in Design and Interaction</li>
+                    <li><b>Minor: </b>Computer Science</li>
+                    <li><b>Career Goals:</b> UX/Product Designer</li>
+                    <li><b>Interests:</b> 3D Printing, CAD, VR, Coding, Hiking, Gym, Music</li>
+                </ul>
+            </section>
+            <section>
+                <h2>FAQ</h2>
+                <details>
+                    <summary>How long have you been 3D printing?</summary>
+                    <p>Since 2017! My parents bought me a 3D printer kit called the "Anet A8" made of acrylic and a lot of loose wires (also famous for fire hazards but luckily not mine). Ever since then, I've worked with various other brands, tinkering and upgrading, and currently use a Bambu A1 mini. </p>
+                </details>
+                <details>
+                    <summary>Why choose UI/UX with such a maker background?</summary>
+                    <p>I've always been a tinkerer but for some reason I never thought of my background there as a potential career choice. I like keeping it separate as it gives me the freedom to explore my own fields rather than pressure to adhere to some job criteria. Plus when it comes to UI/UX I like solving problems, so working towards a set goal makes things much easier.</p>
+                </details> 
+                <details>
+                    <summary>What software tools do you use?</summary>
+                    <p>While it tends to vary as I love trying out new things, here are my current standards:</p>
+                    <ul>
+                        <li>Figma - UI/UX Design</li>
+                        <li>Fusion - 3D Modeling</li>
+                        <li>Orca Slicer, Bambu Studio - 3D Printer Slicing</li>
+                        <li>VS Code - Web Development</li>
+                    </ul>
+                    <p>I've also been tinkering with new 2D design programs like Affinity Designer and video editing programs like DaVinci Resolve!</p>
+                </details>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Cory Chung 2025</p>
+    </footer>
+    <!-- Theme Picker Dialog -->
+    <dialog id="themeDialog">
+        <header>
+            <h3>Pick a theme!</h3>
+        </header>
+        <form>
+            <input id="light" name="theme" type="radio" data-theme="light" onclick="light_theme()" checked></input>
+            <label for="light">Light</label>
+            <br>
+            <input id="dark" name="theme" type="radio" data-theme="dark" onclick="dark_theme()"></input>
+            <label for="dark">Dark</label>
+        </form>
+        <footer>
+            <button commandfor="themeDialog" command="close">Close</button>
+        </footer>
+    </dialog>
+  </body>
+  
+</html>
