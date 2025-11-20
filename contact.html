@@ -6,7 +6,8 @@
     <meta name="description" content="Contact page for Cory Chung's personal portfolio.">
     <title>Contact Me</title>
     <script src="theme-picker.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script async src="script.js"></script>
+    <link rel="stylesheet" href="style-with-js.css">
   </head>
   <body>
     <header>
@@ -29,31 +30,41 @@
     <main>
         <section>
             <h1>Contact Me</h1>
-            <p>Got questions or just want to say hi? Send an email over!</p>
-            <form class="page-section">
+            <p>Got questions or just want to say hi? Leave a message!</p>
+            <form class="page-section" action="https://httpbin.org/post" method="post">
+
+                <input type="hidden" name="possible_bot" value="true">
+                
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
+                <input type="text" id="name" name="name" minlength="2" maxlength="80" placeholder="First Last" required>
+                
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
+                <input type="email" id="email" name="email" minlength="4" maxlength="254" placeholder="me@mail.com" required>
+                
                 <fieldset>
                     <legend>Select a topic:</legend>
-                    <input type="radio" id="proj-inq" name="topic" checked />
+                    <input type="radio" id="proj-inq" value="proj-inq" name="topic" checked />
                     <label for="proj-inq">Project Inquiry</label><br>
-                    <input type="radio" id="collab-req" name="topic"/>
+                    <input type="radio" id="collab-req" value="collab-req" name="topic"/>
                     <label for="collab-req">Collaboration Request</label><br>
-                    <input type="radio" id="other" name="topic"/>
+                    <input type="radio" id="other" value="other" name="topic"/>
                     <label for="other">Other</label><br>
                 </fieldset>
-
+                
                 <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
+                <input type="text" id="subject" name="subject" minlength="2" maxlength="70" placeholder="Love your work!" required>
+                
+                <label for="comments">Message/Comments:</label>
+                <textarea id="comments" name="comments" maxlength="300" placeholder="Anything you want!" required></textarea>
+                <output id="char-count">300 characters remaining</output>
+                
                 <button type="submit">Send</button>
+                <div class="form-message">
+                    <output id="form-error">Error message!</output>
+                    <output id="form-info">Info message!</output>
+                </div>
+                
+                <input type="hidden" name="form-errors" id="form-errors">
             </form>      
         </section>
         <section>
