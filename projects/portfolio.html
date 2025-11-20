@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cory Chung's personal portfolio site project created for UC San Diego's CSE 134B course.">
+    <title>Personal Portfolio Site</title>
+    <script src="/theme-picker.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">CC</a>
+            <button id="burger-menu" popovertarget="mypopover">Menu</button>
+            <ul id="mypopover" popover>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <button id="theme-picker" commandfor="themeDialog" command="show-modal" aria-label="Pick a theme" hidden>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 8.5H15.51M10.5 7.5H10.51M7.5 11.5H7.51M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 13.6569 19.6569 15 18 15H17.4C17.0284 15 16.8426 15 16.6871 15.0246C15.8313 15.1602 15.1602 15.8313 15.0246 16.6871C15 16.8426 15 17.0284 15 17.4V18C15 19.6569 13.6569 21 12 21ZM16 8.5C16 8.77614 15.7761 9 15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5ZM11 7.5C11 7.77614 10.7761 8 10.5 8C10.2239 8 10 7.77614 10 7.5C10 7.22386 10.2239 7 10.5 7C10.7761 7 11 7.22386 11 7.5ZM8 11.5C8 11.7761 7.77614 12 7.5 12C7.22386 12 7 11.7761 7 11.5C7 11.2239 7.22386 11 7.5 11C7.77614 11 8 11.2239 8 11.5Z" stroke="#4848a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+      <article>
+        <h1>Personal Portfolio Site (CSE 134B)</h1>
+          <picture>
+              <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-2000.webp" type="image/webp">
+              <img width="3032" height="2156" src="/media/images/portfolio_thumbnail/portfolio_thumbnail.png" alt="Picture of the code behind this portfolio site">
+          </picture>
+        <section>
+          <h2>What is this portfolio site?</h2>
+          <p>As part of my web development course at UC San Diego (CSE 134B), I worked on a personal portfolio site, building it all from scratch using HTML, CSS, and JS.</p>
+        </section>
+        <section>
+          <h2>Inspiration</h2>
+          <p>In terms of inspiration, the main rubric for this assignment emphasized that I should be using this opportunity to make a site that advertises myself and my coding career. But since this was a CS class and I'm only a CS minor, I had different career aspects and an already existing <a href="https://corychung.framer.website/">UX portfolio</a>, so I wanted to find something a bit more personal to me. Instead of creating a portfolio for my coding or career work, I instead thought to create a portfolio for more of my personal work, hobbies, and creations.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/uxportfolio/uxportfolio-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/uxportfolio/uxportfolio-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/uxportfolio/uxportfolio-2000.webp" type="image/webp">
+              <img src="/media/images/uxportfolio/uxportfolio.png" alt="Screenshot of Cory's UX portfolio" loading="lazy">
+            </picture>
+            <figcaption>A peek at what my OTHER portfolio looks like.</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Initial Drafts</h2>
+          <p>When thinking about the traditional "portfolio" many people think about the classic work, home, about, and contact pages. I wanted to keep the same structure here and drew up some wireframes to create this content.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/wireframe/wireframe-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/wireframe/wireframe-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/wireframe/wireframe-2000.webp" type="image/webp">
+              <img src="/media/images/wireframe/wireframe.png" alt="Screenshot of initial draft of the portfolio site, in black and white" loading="lazy">
+            </picture>
+            <figcaption>Pretty barebones, as most wireframes should be.</figcaption>
+          </figure>
+          <p>When it came to the specific color themes and layout, I was really inspired by the color themes of my UX portfolio, those being light purples and blues (maybe I have a favorite color). As a result I decided to go with that for this portfolio too. However, I was inspired by an in-class demonstration of a pure CSS dark/light mode theme switcher, so I wanted to make a version of that on my own site too, with the dark mode being a dark blue and black neon theme.</p>
+        </section>
+        <section>
+          <h2>Choosing Content</h2>
+          <p>Choosing content was a pretty difficult experience for me. I knew I wanted to do something more recent, and the only project I could immediately think of was my 3D printer project over the summer. But when it came to thinking of other projects, it was hard to find something that wasn't school or work related. Eventually I narrowed it down to this site itself and my web dev bootcamp, which I think were good decisions in the end.</p>
+        </section>
+        <section>
+          <h2>My Experience</h2>
+          <p>In terms of my experience, I really did have a lot of fun playing around with the new HTML tags and CSS properties that we learned about in class. I already had experience playing with Flexbox, Grid, and other common CSS functions, but this class made me think about it in a much more modern way. I had never known about nested CSS, the <code>@layer</code> rule, or any other "best practices" for how to structure my code, so it was really cool to try and implement those on my own. I also enjoyed the challenge of trying to implement things like view transitions and theme pickers. </p>
+          <h3>Challenges</h3>
+          <p>Because of how new a lot of the features I was trying to implement were, it was pretty difficult to find up-to-date documentation for them. For example, <code>popover</code> and <code>commandfor</code> on <code>button</code> elements were brand new features and just recently baseline on most browsers, so most articles and discussion online talked about previous workarounds rather than these new features. So it was fun to pore the official MDN docs but difficult at the same time. Another challenge I had was when dealing with image content. The <code>picture</code> tag was something that was brand new to me, and having to manually convert all my images to different pixel sizes and file types was a bit overly tedious but necessary. It was also pretty hard to find content to place as images too since documenting my projects is definitely a skill I tend to lack.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/popover/popover-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/popover/popover-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/popover/popover-2000.webp" type="image/webp">
+              <img src="/media/images/popover/popover.png" alt="Screenshot showing the popover attribute being baseline in browsers in 2025" loading="lazy">
+            </picture>
+            <figcaption>Baseline in 2025? So modern!</figcaption>
+          </figure>
+          <h3>What Went Well</h3>
+          <p>In terms of what went well, I think that I am pretty satisfied with the visual layout of the site. I also think that I was able to implement the mobile navbar hamburger-menu menu in a pretty effective way, although it did take a lot of newer CSS features and a lot of research. I also think the writeups I made for the projects were well fleshed out and hopefully tell a pretty thorough and complete story.</p>
+        </section>
+        <section>
+          <h2>Conclusion</h2>
+          <p>Overall, I'm pretty happy with how my site turned out. I think I did well in terms of accessibility, responsive design, proper layout, and I also think the site looks pretty good and minimalistic as well. If I had more time, I think I would have spent more time brainstorming different projects and maybe page sections to flesh out the site even more and add more fun features.</p>
+        </section>
+      </article>
+    </main>
+    <footer>
+        <p>&copy; Cory Chung 2025</p>
+    </footer>
+    <!-- Theme Picker Dialog -->
+    <dialog id="themeDialog">
+        <header>
+            <h3>Pick a theme!</h3>
+        </header>
+        <form>
+            <input id="light" name="theme" type="radio" data-theme="light" onclick="light_theme()" checked></input>
+            <label for="light">Light</label>
+            <br>
+            <input id="dark" name="theme" type="radio" data-theme="dark" onclick="dark_theme()"></input>
+            <label for="dark">Dark</label>
+        </form>
+        <footer>
+            <button commandfor="themeDialog" command="close">Close</button>
+        </footer>
+    </dialog>
+  </body>
+</html>

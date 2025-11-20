@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cory Chung's DIY Duender 3D printer project details and build process.">
+    <title>Duender 3D Printer</title>
+    <script src="/theme-picker.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">CC</a>
+            <button id="burger-menu" popovertarget="mypopover">Menu</button>
+            <ul id="mypopover" popover>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <button id="theme-picker" commandfor="themeDialog" command="show-modal" aria-label="Pick a theme" hidden>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 8.5H15.51M10.5 7.5H10.51M7.5 11.5H7.51M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 13.6569 19.6569 15 18 15H17.4C17.0284 15 16.8426 15 16.6871 15.0246C15.8313 15.1602 15.1602 15.8313 15.0246 16.6871C15 16.8426 15 17.0284 15 17.4V18C15 19.6569 13.6569 21 12 21ZM16 8.5C16 8.77614 15.7761 9 15.5 9C15.2239 9 15 8.77614 15 8.5C15 8.22386 15.2239 8 15.5 8C15.7761 8 16 8.22386 16 8.5ZM11 7.5C11 7.77614 10.7761 8 10.5 8C10.2239 8 10 7.77614 10 7.5C10 7.22386 10.2239 7 10.5 7C10.7761 7 11 7.22386 11 7.5ZM8 11.5C8 11.7761 7.77614 12 7.5 12C7.22386 12 7 11.7761 7 11.5C7 11.2239 7.22386 11 7.5 11C7.77614 11 8 11.2239 8 11.5Z" stroke="#4848a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+      <article>
+        <h1>Duender: DIY 3D Printer</h1>
+          <picture>
+              <source srcset="/media/images/duender/duender-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/duender/duender-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/duender/duender-2000.webp" type="image/webp">
+              <img width="3032" height="2002" src="/media/images/duender/duender.png" alt="Screenshot of the 3D model of the Duender 3D printer">
+          </picture>
+        <section>
+          <h2>What is the Duender?</h2>
+          <p>To summarize, <strong>the Duender is a custom built 3D printer made from 2 of the most popular 3D printer of all time: the Ender 3.</strong> By combining the parts from two of these printers (and adding a few more parts), we are able to create our <em>own custom printer.</em></p>
+          <p>Check out the original author <a href=https://www.youtube.com/embed/zOplNhr5SfA">Sergei Irbis's Youtube video</a> for more details.</p>
+        </section>
+        <section>
+          <h2>Inspiration</h2>
+          <p>I was first inspired to follow this project because I wanted something to do over the summer that involved DIY and 3D printing. I was always involved with 3D printers since middle school, always trying to tinker and upgrade, but I had never taken on the task of making one purely from scratch. After finding the Duender from a  "top 10 DIY printers" YouTube video, I was inspired to make it, primarily due to the low cost of materials compared to other builds since this one used cheap leftovers from other machines.</p>
+        </section>
+        <section>
+          <h2>Gathering Parts</h2>
+          <p>First I had to work on gathering the parts. The main issue was finding the printers first, which I planned to do secondhand, and then buy any excess parts as cheap as possible via AliExpress (I am a college student after all).</p>
+          <h3>Finding the Printers</h3>
+          <p>I knew I wanted to buy two Ender 3 printers to get this build done, but the main issue was that some were slightly less than ideal for my build. There are many versions of this printer, including but not limited to: E3V2, E3V1, E3 Pro, E3V3, E3V3S1, etc. etc. So I had to make sure I was looking at the right ones.</p>
+          <p>After searching for a while on Facebook Marketplace and OfferUp, I was able to find two printers for a combined total of around $70, which is a steal considering these printers retail for around $150 each. While they were slightly different versions (V2 and Pro), they were luckily still compatible with each other and would work well for my build.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/garage/garage-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/garage/garage-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/garage/garage-2000.webp" type="image/webp">
+              <img src="/media/images/garage/garage.jpg" alt="Three of the purchased printers sitting in my garage workshop" loading="lazy">
+            </picture>
+            <figcaption>Look at all those printers! (also featuring my Bambu A1 mini)</figcaption>
+          </figure>
+          <h3>AliExpress</h3>
+          <p>After taking stock of what I had and collected, I knew I had additional hardware I needed to purchase. Luckily AliExpress helped with this, and since I had never used it before I was able to snatch up a lot of "new user" deals and get what I needed for around $60 USD total.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/aliexpress/aliexpress-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/aliexpress/aliexpress-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/aliexpress/aliexpress-2000.webp" type="image/webp">
+              <img src="/media/images/aliexpress/aliexpress.jpeg" alt="A collage of the parts purchased from AliExpress" loading="lazy">
+            </picture>
+            <figcaption>For the amount of stuff I got, $60 was honestly a steal. Thanks AliExpress!</figcaption>
+          </figure>
+          <h3>Custom Software</h3>
+          <p>Besides the hardware, we also needed to consider the software. Typically these kinds of machines run on the mainboard of the printer, but most DIY printers require more compute power and typically use something like a Raspberry Pi. Unfortunately, since I didn't have one on hand and didn't want to spend the extra cash given my string-tight budget, I instead went the route of taking an old Android phone I had lying around and using that instead.</p>  
+          <p>The open source software for these printers is called Klipper, and can run on any form of Linux, not just a Pi, so once I was able to jailbreak/root the Android phone and install a Linux instance, it was easy to install Klipper and get the software side prepped for the build.</p>
+        </section>
+        <section>
+          <h2>Custom Configuration</h2>
+          <p>Going back to the hardware, the build for this particular printer was quite varied in its potential. After joining the DIY community server on Discord, I realized there was a wealth of different extruder, hotend, nozzle, motion system, and electronics combinations that could be used in order to make this build. Of course, I was going for the cheapest options, but I still wanted pretty decent performance, so I opted for the following configuration:</p>
+          <ul>
+            <li>Linear rails (over V-rollers) for smoother motion</li>
+            <li>Sherpa Mini (DIY) extruder based off the Bondtech BMG</li>
+            <li>Xol toolhead for the large community support</li>
+            <li>Klicky probe made from the endstop of the Ender 3</li>
+          </ul>
+          <p>There were a ton of other configuration choices, so it was pretty difficult to make it to this point, but I think I'm pretty satisfied with my choices from a price to performance ratio. If I went too low I'd basically just have a slightly fancier Ender 3, and I wanted something a bit more upgraded than that.</p>
+          <figure>
+              <picture>
+                <source srcset="/media/images/parts/parts-600.webp" media="(max-width: 600px)" type="image/webp">
+                <source srcset="/media/images/parts/parts-1200.webp" media="(max-width: 1200px)" type="image/webp">
+                <source srcset="/media/images/parts/parts-2000.webp" type="image/webp">
+                <img src="/media/images/parts/parts.jpg" alt="A collection of all the parts I gathered so far" loading="lazy">
+              </picture>
+              <figcaption>All the parts gathered and ready to be assembled!</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Current State</h2>
+          <p>While I planned to finish this project in the summer, as all projects go, life gets in the way. So as of right now (November 2025), I'm still in the stage of building out the physical printer. So far I've gotten the frame itself (which it was a pain to square), all the necessary printed parts (shoutout to the UCSD makerspace), and a working set of dual Z axis components.</p>
+          <figure>
+            <picture>
+              <source srcset="/media/images/printer/printer-600.webp" media="(max-width: 600px)" type="image/webp">
+              <source srcset="/media/images/printer/printer-1200.webp" media="(max-width: 1200px)" type="image/webp">
+              <source srcset="/media/images/printer/printer-2000.webp" type="image/webp">
+              <img src="/media/images/printer/printer.jpg" alt="Current unfinished state of the printer" loading="lazy">
+            </picture>
+            <figcaption>Current state: frame done, Z motors set up (not pictured). Long way to go!</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Next Steps</h2>
+          <p>As for the next steps, there's still a pretty long way to go. After the bed is installed, I still have to work on the XY motion system, and then have to deal with the extruder assembly, and my least favorite part, the wiring and electronics. Finally hooking it all up to the Android and flashing Klipper, and getting it all set up. So it's a long way to go before making my first Benchy, but I'll make sure to keep this site updated the whole way through.</p>
+        </section>
+      </article>
+    </main>
+    <footer>
+        <p>&copy; Cory Chung 2025</p>
+    </footer>
+
+    <!-- Theme Picker Dialog -->
+    <dialog id="themeDialog">
+        <header>
+            <h3>Pick a theme!</h3>
+        </header>
+        <form>
+            <input id="light" name="theme" type="radio" data-theme="light" onclick="light_theme()" checked></input>
+            <label for="light">Light</label>
+            <br>
+            <input id="dark" name="theme" type="radio" data-theme="dark" onclick="dark_theme()"></input>
+            <label for="dark">Dark</label>
+        </form>
+        <footer>
+            <button commandfor="themeDialog" command="close">Close</button>
+        </footer>
+    </dialog>
+  </body>
+</html>
