@@ -6,6 +6,7 @@
     <meta name="description" content="Projects page for Cory Chung's personal portfolio showcasing various projects.">
     <title>Projects</title>
     <script src="theme-picker.js"></script>
+    <script src="project-card.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -31,38 +32,35 @@
             <h1>Projects</h1>
             <p>Learn more about what I've worked on!</p>
             <div class="project-grid">
-                <project-card>
-                    <picture>
-                        <source srcset="/media/images/duender/duender-600.webp" media="(max-width: 600px)" type="image/webp">
-                        <source srcset="/media/images/duender/duender-1200.webp" media="(max-width: 1200px)" type="image/webp">
-                        <source srcset="/media/images/duender/duender-2000.webp" type="image/webp">
-                        <img src="/media/images/duender/duender.png" alt="Screenshot of the 3D model of the Duender 3D printer">
-                    </picture>
-                    <h2>DIY 3D Printer</h2>
-                    <p>Creating a fully featured CoreXY 3D printer completely from scratch.</p>
-                    <a href="projects/duender.html">View Now</a><br>
+                <project-card
+                    title="DIY 3D Printer"
+                    desc="Creating a fully featured CoreXY 3D printer completely from scratch."
+                    url="projects/duender.html"
+                    img="/media/images/duender/duender.png"
+                    img600="/media/images/duender/duender-600.webp"
+                    img1200="/media/images/duender/duender-1200.webp"
+                    img2000="/media/images/duender/duender-2000.webp"
+                    alt="Screenshot of the 3D model of the Duender 3D printer">
                 </project-card>
-                <project-card>
-                    <picture>
-                        <source srcset="/media/images/odin/odin-600.webp" media="(max-width: 600px)" type="image/webp">
-                        <source srcset="/media/images/odin/odin-1200.webp" media="(max-width: 1200px)" type="image/webp">
-                        <source srcset="/media/images/odin/odin-2000.webp" type="image/webp">
-                        <img src="/media/images/odin/odin.png" alt="Logo for The Odin Project web dev bootcamp">
-                    </picture>
-                    <h2>The Odin Project</h2>
-                    <p>My experience working through The Odin Project's web dev curriculum.</p>
-                    <a href="projects/odin.html">View Now</a><br>
+                <project-card
+                    title="The Odin Project"
+                    desc="My experience working through The Odin Project's web dev curriculum."
+                    url="projects/odin.html"
+                    img="/media/images/odin/odin.png"
+                    img600="/media/images/odin/odin-600.webp"
+                    img1200="/media/images/odin/odin-1200.webp"
+                    img2000="/media/images/odin/odin-2000.webp"
+                    alt="Logo for The Odin Project web dev bootcamp">
                 </project-card>
-                <project-card>
-                    <picture>
-                        <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-600.webp" media="(max-width: 600px)" type="image/webp">
-                        <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-1200.webp" media="(max-width: 1200px)" type="image/webp">
-                        <source srcset="/media/images/portfolio_thumbnail/portfolio_thumbnail-2000.webp" type="image/webp">
-                        <img src="/media/images/portfolio_thumbnail/portfolio_thumbnail.png" alt="Picture of the code behind this portfolio site">
-                    </picture>
-                    <h2>This Portfolio Site!</h2>
-                    <p>The very site you're on right now, built from scratch in HTML and CSS (no JS!)</p>
-                    <a href="projects/portfolio.html">View Now</a><br>
+                <project-card
+                    title="This Portfolio Site!"
+                    desc="The very site you're on right now, built from scratch in HTML and CSS (no JS!)"
+                    url="projects/portfolio.html"
+                    img="/media/images/portfolio_thumbnail/portfolio_thumbnail.png"
+                    img600="/media/images/portfolio_thumbnail/portfolio_thumbnail-600.webp"
+                    img1200="/media/images/portfolio_thumbnail/portfolio_thumbnail-1200.webp"
+                    img2000="/media/images/portfolio_thumbnail/portfolio_thumbnail-2000.webp"
+                    alt="Picture of the code behind this portfolio site">
                 </project-card>
             </div>  
         </section>
