@@ -237,7 +237,30 @@
             height: fit-content;
             width: inherit;
         }
-        .project-grid {
+        #button-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            button {
+                font-size: 1.05rem;
+                background-color: var(--heading-text-color, black);
+                text-decoration: none;
+                color: var(--background-color, white);
+                padding: 0.5rem;
+                border-radius: var(--border-radius, 0.5rem);
+                border: none;
+                font-family: 'Satoshi', Tahoma, Geneva, Verdana, sans-serif;
+                &:hover{
+                    background-color: var(--text-color-hover, black);
+                }
+                &:active {
+                    background-color: var(--text-color-active, black);
+                }
+            }
+        }
+        #project-grid {
             display: flex;
             justify-content: center;
             align-items: start;
@@ -489,7 +512,7 @@
 
 @layer mobile-override {
     @media only screen and (max-width: 600px) {
-        .project-grid, #social-links {
+        #project-grid, #social-links {
             flex-direction: column;
         }
         article section, article picture img {
