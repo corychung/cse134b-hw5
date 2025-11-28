@@ -15,6 +15,7 @@ const output = document.getElementById("crud-output");
 
 let localProjects = JSON.parse(localStorage.getItem("localProjects")) || [];
 
+// Reload the project dropdown list
 function reloadProjectList() {
     projectList.innerHTML = "";
     if (localProjects.length == 0 || !localProjects) {
@@ -33,57 +34,57 @@ function reloadProjectList() {
     }
 }
 
-// Reload form field states based on dropdown selection and default projects
+// Reload form field states based on dropdown selection and/or default projects
 function reloadFormFieldStates() {
-    if (projectDropdown.value === "create") {
+    const isCreate = projectDropdown.value === "create";
+    
+    // Set button states
+    editButton.disabled = isCreate;
+    editButton.style.backgroundColor = isCreate ? "gray" : "";
+    deleteButton.disabled = isCreate;
+    deleteButton.style.backgroundColor = isCreate ? "gray" : "";
+    createButton.disabled = !isCreate;
+    createButton.style.backgroundColor = isCreate ? "" : "gray";
+
+    // Populate form fields if a project is selected
+    if (isCreate) {
         form.reset();
-        editButton.disabled = true;
-        editButton.style.backgroundColor = "gray";
-        deleteButton.disabled = true;
-        deleteButton.style.backgroundColor = "gray";
-        createButton.disabled = false;
-        createButton.style.backgroundColor = "";
     }
     else {
         const project = localProjects[projectDropdown.value];
-        document.getElementById("title").value = project.title;
-        document.getElementById("desc").value = project.desc;
-        document.getElementById("url").value = project.url;
-        document.getElementById("img").value = project.img;
-        document.getElementById("img-alt").value = project.alt;
-        editButton.disabled = false;
-        editButton.style.backgroundColor = "";
-        deleteButton.disabled = false;
-        deleteButton.style.backgroundColor = "";
-        createButton.disabled = true;
-        createButton.style.backgroundColor = "gray";
-
-        if (project.default === "yes") {
-            img.setAttribute("readonly", "true");   
-            img.style.backgroundColor = "lightgray";
-            url.setAttribute("readonly", "true");
-            url.style.backgroundColor = "lightgray";
-            output.value = "Note: Default projects have read-only image and URL fields.";
-        } else {
-            img.removeAttribute("readonly");
-            img.style.backgroundColor = "";
-            url.removeAttribute("readonly");
-            url.style.backgroundColor = "";
-            output.value = "";
-        }
+        title.value = project.title;
+        desc.value = project.desc;
+        url.value = project.url;
+        img.value = project.img;
+        imgAlt.value = project.alt;
     }
-}
 
-projectDropdown.addEventListener("change", () => {
-    reloadFormFieldStates();
-});
+    // Set readonly states for default projects
+    if (!isCreate) {
+        const project = localProjects[projectDropdown.value];
+        const isDefault = project.default === "yes";
+        img.toggleAttribute("readonly", isDefault);   
+        img.style.backgroundColor = isDefault ? "lightgray" : "";
+        url.toggleAttribute("readonly", isDefault);
+        url.style.backgroundColor = isDefault ? "lightgray" : "";
+        output.value = isDefault ? "Note: Default projects have read-only image and URL fields.": "";
+    } else {
+        img.removeAttribute("readonly");
+        img.style.backgroundColor = "";
+        url.removeAttribute("readonly");
+        url.style.backgroundColor = "";
+        output.value = "";
+    }
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     reloadProjectList();
-    editButton.disabled = true;
-    editButton.style.backgroundColor = "gray";
-    deleteButton.disabled = true;
-    deleteButton.style.backgroundColor = "gray";
+    reloadFormFieldStates();
+});
+
+projectDropdown.addEventListener("change", () => {
+    reloadFormFieldStates();
 });
 
 form.addEventListener("submit", (event) => {
