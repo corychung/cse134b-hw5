@@ -34,11 +34,7 @@ function refreshProjectList() {
 // Handle auto-fill for project selection
 projectSelect.addEventListener("change", () => {
     if (projectSelect.value === "create") {
-        title.value = "";
-        desc.value = "";
-        url.value = "";
-        img.value = "";
-        imgAlt.value = "";
+        form.reset();
         editButton.disabled = true;
         editButton.style.backgroundColor = "gray";
         deleteButton.disabled = true;
