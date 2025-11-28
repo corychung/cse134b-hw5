@@ -40,10 +40,10 @@ function reloadFormFieldStates() {
     
     // Set button states
     editButton.disabled = isCreate;
-    editButton.style.backgroundColor = isCreate ? "gray" : "";
     deleteButton.disabled = isCreate;
-    deleteButton.style.backgroundColor = isCreate ? "gray" : "";
     createButton.disabled = !isCreate;
+    editButton.style.backgroundColor = isCreate ? "gray" : "";
+    deleteButton.style.backgroundColor = isCreate ? "gray" : "";
     createButton.style.backgroundColor = isCreate ? "" : "gray";
 
     // Populate form fields if a project is selected
@@ -64,18 +64,27 @@ function reloadFormFieldStates() {
         const project = localProjects[projectDropdown.value];
         const isDefault = project.default === "yes";
         img.toggleAttribute("readonly", isDefault);   
-        img.style.backgroundColor = isDefault ? "lightgray" : "";
         url.toggleAttribute("readonly", isDefault);
+        img.style.backgroundColor = isDefault ? "lightgray" : "";
         url.style.backgroundColor = isDefault ? "lightgray" : "";
         output.value = isDefault ? "Note: Default projects have read-only image and URL fields.": "";
     } else {
         img.removeAttribute("readonly");
-        img.style.backgroundColor = "";
         url.removeAttribute("readonly");
+        img.style.backgroundColor = "";
         url.style.backgroundColor = "";
         output.value = "";
     }
 
+}
+
+function processSubmissionResult(message) {
+    localStorage.setItem("localProjects", JSON.stringify(localProjects));
+    form.reset();
+    reloadFormFieldStates();
+    reloadProjectList();
+    output.value = message;
+    setTimeout(() => {output.value = "";}, 1500);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -105,13 +114,7 @@ form.addEventListener("submit", (event) => {
             default: "no"
         };
         localProjects.push(newProject);
-
-        localStorage.setItem("localProjects", JSON.stringify(localProjects));
-        form.reset();
-        reloadFormFieldStates();
-        output.value = "Project created successfully.";
-        setTimeout(() => {output.value = "";}, 1500);
-        reloadProjectList();
+        processSubmissionResult("Project created successfully.");
 
     } else if (action === "edit") {
         const project = localProjects[projectDropdown.value];
@@ -137,23 +140,10 @@ form.addEventListener("submit", (event) => {
         project.img1200 = "";
         project.img2000 = "";
         
-        localStorage.setItem("localProjects", JSON.stringify(localProjects));
-        form.reset();
-        reloadFormFieldStates();
-        output.value = "Project edited successfully.";
-        setTimeout(() => {output.value = "";}, 1500);
-        reloadProjectList();
+        processSubmissionResult("Project edited successfully.");
 
     } else if (action === "delete") {
-        const index = projectDropdown.value;
-
-        localProjects.splice(index, 1);
-
-        localStorage.setItem("localProjects", JSON.stringify(localProjects));
-        form.reset();
-        reloadFormFieldStates();
-        output.value = "Project deleted successfully.";
-        setTimeout(() => {output.value = "";}, 1500);
-        reloadProjectList();
+        localProjects.splice(projectDropdown.value, 1);
+        processSubmissionResult("Project deleted successfully.");
     }
 });
