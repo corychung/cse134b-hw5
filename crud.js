@@ -1,0 +1,126 @@
+const title = document.getElementById("title");
+const desc = document.getElementById("desc");
+const url = document.getElementById("url");
+const img = document.getElementById("img");
+const imgAlt = document.getElementById("img-alt");
+const editButton = document.getElementById("edit-button");
+const createButton = document.getElementById("create-button");
+const deleteButton = document.getElementById("delete-button");
+const projectSelect = document.getElementById("project-select");
+const projectList = document.getElementById("project-list");
+const output = document.getElementById("crud-output");
+const form = document.getElementById("crud-form");
+
+let localProjects = JSON.parse(localStorage.getItem("localProjects")) || [];
+
+function refreshProjectList() {
+    projectList.innerHTML = "";
+    if (localProjects.length == 0 || !localProjects) {
+        let option = document.createElement("option");     
+        option.value = "null";      
+        option.textContent = "-- NO PROJECTS FOUND --";
+        option.setAttribute("disabled", "true");
+        projectList.appendChild(option);
+    } else {
+        localProjects.forEach((project, index) => {
+            let option = document.createElement("option");
+            option.value = index;            
+            option.textContent = project.title;
+            projectList.appendChild(option);
+        });
+    }
+}
+
+// Handle auto-fill for project selection
+projectSelect.addEventListener("change", () => {
+    if (projectSelect.value === "create") {
+        title.value = "";
+        desc.value = "";
+        url.value = "";
+        img.value = "";
+        imgAlt.value = "";
+        editButton.disabled = true;
+        editButton.style.backgroundColor = "gray";
+        deleteButton.disabled = true;
+        deleteButton.style.backgroundColor = "gray";
+        createButton.disabled = false;
+        createButton.style.backgroundColor = "";
+    }
+    else {
+        const project = localProjects[projectSelect.value];
+        document.getElementById("title").value = project.title;
+        document.getElementById("desc").value = project.desc;
+        document.getElementById("url").value = project.url;
+        document.getElementById("img").value = project.img;
+        document.getElementById("img-alt").value = project.alt;
+        editButton.disabled = false;
+        editButton.style.backgroundColor = "";
+        deleteButton.disabled = false;
+        deleteButton.style.backgroundColor = "";
+        createButton.disabled = true;
+        createButton.style.backgroundColor = "gray";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    refreshProjectList();
+    editButton.disabled = true;
+    editButton.style.backgroundColor = "gray";
+    deleteButton.disabled = true;
+    deleteButton.style.backgroundColor = "gray";
+});
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(form, event.submitter);
+    const action = formData.get("action");
+    if (action === "create") {
+        const newProject = {    
+            title: formData.get("title"),
+            desc: formData.get("desc"),
+            url: formData.get("url"),
+            img: formData.get("img"), // image only since no upload capability
+            img600: "", // prevent picture tag from choosing non-existent images
+            img1200: "",
+            img2000: "",
+            alt: formData.get("img-alt"),
+            default: "no"
+        };
+        form.reset();
+        localProjects.push(newProject);
+        localStorage.setItem("localProjects", JSON.stringify(localProjects));
+        output.value = "Project created successfully.";
+        setTimeout(() => {output.value = "";}, 1500);
+        refreshProjectList();
+    } else if (action === "edit") {
+        if (localProjects.default === "yes") {
+
+        }
+        const index = projectSelect.value;
+        localProjects[index].title = formData.get("title");
+        localProjects[index].desc = formData.get("desc");
+        localProjects[index].url = formData.get("url");
+        localProjects[index].img = formData.get("img");
+        localProjects[index].alt = formData.get("img-alt");
+        localProjects[index].img600 = "";
+        localProjects[index].img1200 = "";
+        localProjects[index].img2000 = "";
+        
+        localStorage.setItem("localProjects", JSON.stringify(localProjects));
+        form.reset();
+        output.value = "Project edited successfully.";
+        setTimeout(() => {output.value = "";}, 1500);
+        refreshProjectList();
+
+    } else if (action === "delete") {
+        const index = projectSelect.value;
+        localProjects.splice(index, 1);
+        localStorage.setItem("localProjects", JSON.stringify(localProjects));
+
+        form.reset();
+        output.value = "Project deleted successfully.";
+        setTimeout(() => {output.value = "";}, 1500);
+
+        refreshProjectList();
+    }
+});

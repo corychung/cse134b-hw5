@@ -14,6 +14,8 @@ let errorMsg = "";
 const form = document.querySelector("form");
 const formErrorsInput = document.getElementById("form-errors");
 const formErrors = [];
+errorOutput.style.opacity = 0;
+infoOutput.style.opacity = 0;
 
 function log_form_error(field, message) {
     const errorData = {

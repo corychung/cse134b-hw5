@@ -15,7 +15,8 @@ const localProjects = [
         img600: "/media/images/duender/duender-600.webp",
         img1200: "/media/images/duender/duender-1200.webp",
         img2000: "/media/images/duender/duender-2000.webp",
-        alt: "Screenshot of the Duender 3D printer"
+        alt: "Screenshot of the Duender 3D printer",
+        default: "yes"
     },
     {
         title: "The Odin Project",
@@ -25,7 +26,8 @@ const localProjects = [
         img600: "/media/images/odin/odin-600.webp",
         img1200: "/media/images/odin/odin-1200.webp",
         img2000: "/media/images/odin/odin-2000.webp",
-        alt: "The Odin Project logo"
+        alt: "The Odin Project logo", 
+        default: "yes"
     },
     {                 
         title:"This Portfolio Site!",
@@ -35,7 +37,8 @@ const localProjects = [
         img600:"/media/images/portfolio_thumbnail/portfolio_thumbnail-600.webp",
         img1200:"/media/images/portfolio_thumbnail/portfolio_thumbnail-1200.webp",
         img2000:"/media/images/portfolio_thumbnail/portfolio_thumbnail-2000.webp",
-        alt:"Picture of the code behind this portfolio site"
+        alt:"Picture of the code behind this portfolio site",
+        default: "yes"
     }
 ];
 

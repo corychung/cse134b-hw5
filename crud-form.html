@@ -6,6 +6,7 @@
     <meta name="description" content="Homepage for Cory Chung's personal portfolio showcasing various projects.">
     <title>Cory's Personal Portfolio</title>
     <script src="theme-picker.js"></script>
+    <script src="crud.js" defer></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -27,6 +28,43 @@
         </nav>
     </header>
     <main>
+        <h1>CRUD Editor</h1>
+        <p>Change or edit localStorage used by “Load Local” in Projects.</p>
+        <section id="crud-editor">
+            <form class="page-section no-verify-border" id="crud-form">
+                <label>Create or Select Project:</label>
+                <select title="project-select" id="project-select">
+                    <optgroup label="Create New Project">
+                        <option value="create">Create New Project</option>
+                    </optgroup>
+                    <optgroup label="Edit/Delete Existing Project" id="project-list">
+                    </optgroup>
+                </select>
+
+                <label for="title">Title:</label>
+                <input name="title" id="title" type="text" required>
+
+                <label for="desc">Description:</label>
+                <input name="desc" id="desc" type="text" required>
+
+                <label for="img">Image (external only):</label>
+                <input name="img" id="img" type="url" required>
+
+                <label for="img-alt">Image alt:</label>
+                <input name="img-alt" id="img-alt" type="text" required>
+
+                <label for="url">URL (any new links must be external):</label>
+                <input name="url" id="url" type="url" placeholder="https://..." required>
+
+                <button type="submit" name="action" value="create" id="create-button">Create New Project</button>
+                <button type="submit" name="action" value="edit" id="edit-button">Save Project Changes</button>
+                <button type="submit" name="action" value="delete" id="delete-button">Delete Project</button>
+
+                <div class="form-message">
+                    <output id="crud-output"></output>
+                </div>
+            </form>
+        </section>
     </main>
     <footer>
         <p>&copy; Cory Chung 2025</p>
