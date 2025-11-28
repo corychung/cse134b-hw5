@@ -59,22 +59,16 @@ function reloadFormFieldStates() {
         imgAlt.value = project.alt;
     }
 
-    // Set readonly states for default projects
-    if (!isCreate) {
-        const project = localProjects[projectDropdown.value];
-        const isDefault = project.default === "yes";
-        img.toggleAttribute("readonly", isDefault);   
-        url.toggleAttribute("readonly", isDefault);
-        img.style.backgroundColor = isDefault ? "lightgray" : "";
-        url.style.backgroundColor = isDefault ? "lightgray" : "";
-        output.value = isDefault ? "Note: Default projects have read-only image and URL fields.": "";
-    } else {
-        img.removeAttribute("readonly");
-        url.removeAttribute("readonly");
-        img.style.backgroundColor = "";
-        url.style.backgroundColor = "";
-        output.value = "";
-    }
+    // Set readonly states for images and URLs on default projects
+    const isDefault = !isCreate && localProjects[projectDropdown.value].default === "yes";
+
+    img.toggleAttribute("readonly", isDefault);
+    url.toggleAttribute("readonly", isDefault);
+
+    img.style.backgroundColor = isDefault ? "lightgray" : "";
+    url.style.backgroundColor = isDefault ? "lightgray" : "";
+
+    output.value = isDefault ? "Note: Default projects have read-only image and URL fields.": "";
 
 }
 
