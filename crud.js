@@ -109,6 +109,19 @@ form.addEventListener("submit", (event) => {
         refreshProjectList();
     } else if (action === "edit") {
         const project = localProjects[projectSelect.value];
+        if (
+            project.title === formData.get("title") &&
+            project.desc === formData.get("desc") &&
+            project.url === formData.get("url") &&
+            project.img === formData.get("img") &&
+            project.alt === formData.get("img-alt")
+        ) 
+        {
+            output.value = "No changes detected to save.";
+            setTimeout(() => {output.value = "";}, 1500);
+            return;
+        }
+
         project.title = formData.get("title");
         project.desc = formData.get("desc");
         project.url = formData.get("url");
