@@ -59,7 +59,21 @@ projectSelect.addEventListener("change", () => {
         deleteButton.style.backgroundColor = "";
         createButton.disabled = true;
         createButton.style.backgroundColor = "gray";
+
+        if (localProjects[projectSelect.value].default === "yes") {
+            img.setAttribute("readonly", "true");   
+            img.style.backgroundColor = "lightgray";
+            url.setAttribute("readonly", "true");
+            url.style.backgroundColor = "lightgray";
+            output.value = "Note: Default projects have read-only image and URL fields.";
+            return;
+        }
     }
+    img.removeAttribute("readonly");
+    img.style.backgroundColor = "";
+    url.removeAttribute("readonly");
+    url.style.backgroundColor = "";
+    output.value = "";
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,6 +88,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(form, event.submitter);
     const action = formData.get("action");
+
     if (action === "create") {
         const newProject = {    
             title: formData.get("title"),
@@ -93,18 +108,15 @@ form.addEventListener("submit", (event) => {
         setTimeout(() => {output.value = "";}, 1500);
         refreshProjectList();
     } else if (action === "edit") {
-        if (localProjects.default === "yes") {
-
-        }
-        const index = projectSelect.value;
-        localProjects[index].title = formData.get("title");
-        localProjects[index].desc = formData.get("desc");
-        localProjects[index].url = formData.get("url");
-        localProjects[index].img = formData.get("img");
-        localProjects[index].alt = formData.get("img-alt");
-        localProjects[index].img600 = "";
-        localProjects[index].img1200 = "";
-        localProjects[index].img2000 = "";
+        const project = localProjects[projectSelect.value];
+        project.title = formData.get("title");
+        project.desc = formData.get("desc");
+        project.url = formData.get("url");
+        project.img = formData.get("img");
+        project.alt = formData.get("img-alt");
+        project.img600 = "";
+        project.img1200 = "";
+        project.img2000 = "";
         
         localStorage.setItem("localProjects", JSON.stringify(localProjects));
         form.reset();
