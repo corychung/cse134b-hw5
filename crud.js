@@ -6,7 +6,7 @@ const imgAlt = document.getElementById("img-alt");
 const editButton = document.getElementById("edit-button");
 const createButton = document.getElementById("create-button");
 const deleteButton = document.getElementById("delete-button");
-const projectSelect = document.getElementById("project-select");
+const projectDropdown = document.getElementById("project-select");
 const projectList = document.getElementById("project-list");
 const output = document.getElementById("crud-output");
 const form = document.getElementById("crud-form");
@@ -32,8 +32,8 @@ function refreshProjectList() {
 }
 
 // Handle auto-fill for project selection
-projectSelect.addEventListener("change", () => {
-    if (projectSelect.value === "create") {
+projectDropdown.addEventListener("change", () => {
+    if (projectDropdown.value === "create") {
         form.reset();
         editButton.disabled = true;
         editButton.style.backgroundColor = "gray";
@@ -43,7 +43,7 @@ projectSelect.addEventListener("change", () => {
         createButton.style.backgroundColor = "";
     }
     else {
-        const project = localProjects[projectSelect.value];
+        const project = localProjects[projectDropdown.value];
         document.getElementById("title").value = project.title;
         document.getElementById("desc").value = project.desc;
         document.getElementById("url").value = project.url;
@@ -56,7 +56,7 @@ projectSelect.addEventListener("change", () => {
         createButton.disabled = true;
         createButton.style.backgroundColor = "gray";
 
-        if (localProjects[projectSelect.value].default === "yes") {
+        if (localProjects[projectDropdown.value].default === "yes") {
             img.setAttribute("readonly", "true");   
             img.style.backgroundColor = "lightgray";
             url.setAttribute("readonly", "true");
@@ -104,7 +104,7 @@ form.addEventListener("submit", (event) => {
         setTimeout(() => {output.value = "";}, 1500);
         refreshProjectList();
     } else if (action === "edit") {
-        const project = localProjects[projectSelect.value];
+        const project = localProjects[projectDropdown.value];
         if (
             project.title === formData.get("title") &&
             project.desc === formData.get("desc") &&
@@ -134,7 +134,7 @@ form.addEventListener("submit", (event) => {
         refreshProjectList();
 
     } else if (action === "delete") {
-        const index = projectSelect.value;
+        const index = projectDropdown.value;
         localProjects.splice(index, 1);
         localStorage.setItem("localProjects", JSON.stringify(localProjects));
 
