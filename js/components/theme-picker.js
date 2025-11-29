@@ -101,6 +101,9 @@ dialog {
         const light = this.shadowRoot.querySelector("#light");
         toggle.hidden = false;
 
+        if (!localStorage.getItem("theme")) {
+            localStorage.setItem("theme", "light");
+        }
         const savedTheme = localStorage.getItem("theme");
         setTheme(savedTheme ? savedTheme : "light");
 
