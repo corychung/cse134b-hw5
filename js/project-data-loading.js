@@ -3,6 +3,7 @@
 const grid = document.getElementById("project-grid");
 const loadLocalBtn = document.getElementById("load-local");
 const loadRemoteBtn = document.getElementById("load-remote");
+const restoreDefaultBtn = document.getElementById("restore-default");
 const remoteUrl = "https://api.jsonbin.io/v3/b/69261bded0ea881f40001095";
 let projects = [];
 
@@ -83,4 +84,15 @@ loadRemoteBtn.addEventListener("click", async () => {
     } catch (error) {
         console.error(error.message);
     }
+});
+
+restoreDefaultBtn.addEventListener("click", () => {
+    localStorage.setItem("localProjects", JSON.stringify(localProjects));
+    grid.innerHTML = ""; // clear grid
+    projects = JSON.parse(localStorage.getItem("localProjects")) || [];
+
+    projects.forEach(project => {
+        const card = createCard(project);
+        grid.appendChild(card);
+    });
 });
