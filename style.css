@@ -200,7 +200,19 @@
                 }
             }
         }
-        .project-grid {
+        #project-grid {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            project-card {
+                width:100%;
+                flex-basis: 400px;
+            }
+        }
+        .home-project-grid {
             display: flex;
             justify-content: center;
             align-items: start;
