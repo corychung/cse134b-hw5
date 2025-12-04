@@ -1,4 +1,4 @@
-@layer reset, base, layout, components, mobile-override;
+@layer reset, base, layout, mobile-override;
 
 @layer reset {
     * {
@@ -217,6 +217,7 @@
             justify-content: center;
             align-items: start;
             project-card {
+                flex-basis: 400px;
                 height: fit-content;
                 padding: 1rem 1rem 0.5rem;
                 display:flex;
@@ -439,6 +440,28 @@
                 list-style-position: inside;
                 margin-bottom: 1rem;
                 align-self: start;
+            }
+        }
+        .project-nav-buttons {
+            max-width: 800px;
+            width: 100%;    
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 2rem 0;
+            .nav-btn {
+                padding: 0.5rem 1rem;
+                background-color: var(--heading-text-color);
+                color: var(--background-color);
+                border-radius: var(--border-radius);
+                text-decoration: none;
+                font-weight: bold;
+                &:hover {
+                    background-color: var(--text-color-hover);
+                }
+                &:active {
+                    background-color: var(--text-color-active);
+                }
             }
         }
     }

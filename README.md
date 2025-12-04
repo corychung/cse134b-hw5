@@ -5,4 +5,5 @@ Since I was pretty satisfied with my site visually, I decided to make more chang
 - Cleaning up my CSS file to be more readable
 - Reorganizing the folder structure of my site to be easier to maintain, especially the JS
 - Fixing the CSS of my projects grid to be able to responsively scale to more projects
+- (!!!) Add offline capabilities using ServiceWorkers
 - (!!!) Added a "back to top" and "return back to projects" button to the individual projects pages
