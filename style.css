@@ -183,7 +183,7 @@
             gap: 1rem;
             justify-content: center;
             align-items: center;
-            button {
+            button, a {
                 font-size: 1.05rem;
                 background-color: var(--heading-text-color, black);
                 text-decoration: none;
