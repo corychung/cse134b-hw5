@@ -200,6 +200,20 @@
                 }
             }
         }
+        search {
+            width: 100%;
+            #project-search {
+                width: 100%;
+                max-width: 400px;
+                padding: 0.5rem 1rem;
+                margin: 1rem auto 0rem;
+                display: block;
+                border: var(--border-settings);
+                border-radius: var(--border-radius);
+                font-size: 1rem;
+                font-family:'Satoshi', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
         #project-grid {
             display: flex;
             justify-content: center;

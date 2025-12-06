@@ -7,6 +7,8 @@ const restoreDefaultBtn = document.getElementById("restore-default");
 const remoteUrl = "https://api.jsonbin.io/v3/b/69261bded0ea881f40001095";
 let projects = [];
 
+const searchInput = document.getElementById("project-search");
+
 const localProjects = [
     {
         title: "DIY 3D Printer",
@@ -48,6 +50,9 @@ if (!localStorage.getItem("localProjects")) {
     localStorage.setItem("localProjects", JSON.stringify(localProjects));
 }
 
+// Default have search off until button pressed
+searchInput.style.display = "none";
+
 function createCard(project) {
     const card = document.createElement("project-card");
     for (const attr in project) {
@@ -57,6 +62,8 @@ function createCard(project) {
 }
 
 loadLocalBtn.addEventListener("click", () => {
+    searchInput.style.display = "block";
+    searchInput.value = "";
     grid.innerHTML = ""; // clear grid
     projects = JSON.parse(localStorage.getItem("localProjects")) || [];
 
@@ -67,6 +74,8 @@ loadLocalBtn.addEventListener("click", () => {
 }); 
 
 loadRemoteBtn.addEventListener("click", async () => {
+    searchInput.style.display = "block";
+    searchInput.value = "";
     grid.innerHTML = ""; // clear grid
     try {
         const response = await fetch(remoteUrl);
@@ -88,11 +97,31 @@ loadRemoteBtn.addEventListener("click", async () => {
 
 restoreDefaultBtn.addEventListener("click", () => {
     localStorage.setItem("localProjects", JSON.stringify(localProjects));
+    searchInput.style.display = "block";
+    searchInput.value = "";
     grid.innerHTML = ""; // clear grid
     projects = JSON.parse(localStorage.getItem("localProjects")) || [];
 
     projects.forEach(project => {
         const card = createCard(project);
         grid.appendChild(card);
+    });
+});
+
+// Search functionality
+
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const cards = document.querySelectorAll("project-card");
+
+    cards.forEach(card => {
+        const title = card.getAttribute("title")?.toLowerCase() || "";
+        const desc = card.getAttribute("desc")?.toLowerCase() || "";
+
+        const matches =
+            title.includes(searchTerm) ||   
+            desc.includes(searchTerm);
+
+        card.style.display = matches ? "block" : "none";
     });
 });
