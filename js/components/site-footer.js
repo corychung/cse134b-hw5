@@ -12,13 +12,11 @@ class siteFooter extends HTMLElement {
                 footer {
                     background-color: var(--background-color, white);
                     border-top: var(--border-settings, 1px solid black);
-                    border-radius: var(--border-radius, 0.5rem);
                     width: 100%;
                     display:flex;
                     align-items: center;
                     justify-content: center;
                     margin-top: 1rem;
-                    padding: 1rem 1.5rem;
                     p {
                         font-family: "Clash Display", Tahoma, Geneva, Verdana, sans-serif;
                         font-weight: 400;

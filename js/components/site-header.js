@@ -54,11 +54,66 @@ class siteHeader extends HTMLElement {
                             }
                             a:hover {
                                 color: var(--text-color-hover, black);
-                            }
+                            }                                
                         }
                     }
                     theme-picker {
                         justify-self:end;
+                    }
+                }
+                
+                @media only screen and (max-width: 600px) {
+                    /* Mobile menu navbar */
+                    header {
+                        #burger-menu {
+                            display: inline-block;
+                            text-align:left;
+                            color: var(--heading-text-color, black);
+                            font-weight: 500;
+                            font-family: "Clash Display";
+                            font-size: 1rem;
+                            background: none;
+                            color: inherit;
+                            border: none;
+                            padding: 0.5rem;
+                            cursor: pointer;
+                        }
+                        nav {
+                            grid-template-columns: auto;
+                            justify-self: start;
+                            ul[popover] {
+                                flex-direction: column;
+                                gap: 1rem;
+                                display: none;
+                                transition: opacity 0.25s ease, transform 0.25s ease;
+                                opacity: 0;
+                                transform: translateY(-10px);
+                            }
+                            ul[popover]:popover-open {
+                                margin: 0;
+                                display: flex;
+                                padding: 2rem;
+                                border-bottom: var(--border-settings, 1px solid black);
+
+                                /* Animate popover menu opening */
+                                opacity: 1;
+                                transform: translateY(0);
+                                li {
+                                    width: 100%;
+                                }
+                                @starting-style {
+                                    opacity: 0;
+                                    transform: translateY(-10px);
+                                }
+                            }
+                        }
+                        .logo {
+                            display: none;
+                        }
+                        /* Remove theme picker since "commandfor" which it uses is not widely supported on mobile yet */
+                        theme-picker {
+                            display: none;
+                        }
                     }
                 }
             </style>

@@ -220,7 +220,6 @@
             align-items: start;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
             project-card {
                 width:100%;
                 flex-basis: 400px;
@@ -487,58 +486,11 @@
 
 @layer mobile-override {
     @media only screen and (max-width: 600px) {
-        #project-grid, #social-links {
+        #project-grid, #social-links, #button-grid {
             flex-direction: column;
         }
         article section, article picture img {
             width: 100%;
-        }
-        /* Mobile menu navbar */
-        header {
-            #burger-menu {
-                display: inline-block;
-                text-align:left;
-                color: var(--heading-text-color, black);
-                font-weight: 500;
-                font-family: "Clash Display";
-                font-size: 1rem;
-            }
-            nav {
-                grid-template-columns: auto;
-                justify-self: start;
-                ul[popover] {
-                    flex-direction: column;
-                    gap: 1rem;
-                    display: none;
-
-                    transition: opacity 0.25s ease, transform 0.25s ease;
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                ul[popover]:popover-open {
-                    display: flex;
-                    padding: 2rem;
-                    border-bottom: var(--border-settings, 1px solid black);
-
-                    /* Animate popover menu opening */
-                    opacity: 1;
-                    transform: translateY(0);
-                    li {
-                        width: 100%;
-                    }
-                    @starting-style {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-                }
-            }
-            .logo {
-                display: none;
-            }
-            /* Remove theme picker since "commandfor" which it uses is not widely supported on mobile yet */
-            button {
-                display: none;
-            }
         }
     }
 }
