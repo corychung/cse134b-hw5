@@ -22,15 +22,24 @@ self.addEventListener('fetch', (event) => {
         event.respondWith(
             (async () => {
                 try {
-                const networkResponse = await fetch(event.request);
-                return networkResponse;
-            } catch (error) {
-                console.log('Fetch failed, returning offline page instead');
-                const cache = await caches.open(CACHE_NAME);
-                const cachedResponse = await cache.match(OFFLINE_URL);
-                return cachedResponse;
-            }
-        })()
+                    const networkResponse = await fetch(event.request);
+                    return networkResponse;
+                } catch (error) {
+                    console.log('Fetch failed, returning offline page instead');
+                    const cache = await caches.open(CACHE_NAME);
+                    const cachedResponse = await cache.match(OFFLINE_URL);
+                    // see https://github.com/dotnet/aspnetcore/issues/33872
+                    if (cachedResponse && cachedResponse.redirected) {
+                        cachedResponse = new Response(cachedResponse.body,
+                        {
+                            headers: cachedResponse.headers,
+                            status: cachedResponse.status,
+                            statusText: cachedResponse.statusText
+                        });
+                    }
+                    return cachedResponse;
+                }
+            })()
         );
     } 
 
