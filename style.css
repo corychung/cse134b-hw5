@@ -221,6 +221,7 @@
             gap: 2rem;
             flex-wrap: wrap;
             project-card {
+                display: flex;
                 width:100%;
                 flex-basis: 400px;
             }
