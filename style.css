@@ -206,7 +206,7 @@
                 width: 100%;
                 max-width: 400px;
                 padding: 0.5rem 1rem;
-                margin: 1rem auto 0rem;
+                margin: 2rem auto 1rem;
                 display: block;
                 border: var(--border-settings);
                 border-radius: var(--border-radius);
@@ -215,6 +215,7 @@
             }
         }
         #project-grid {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: start;
