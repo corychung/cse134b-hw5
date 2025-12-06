@@ -38,10 +38,16 @@ self.addEventListener('fetch', (event) => {
     else {
         event.respondWith(
         (async () => {
-            const cache = await caches.open(CACHE_NAME);
-            // ignoreVary is necessary for font files, since vary depends on server, failing cache.match
-            const cachedResponse = await cache.match(event.request, {ignoreVary: true});
-            return cachedResponse ? cachedResponse : fetch(event.request);
+            try {
+                // Try network first so CSS updates immediately
+                const networkResponse = await fetch(event.request);
+                return networkResponse;
+            } catch (error) {
+                // Fallback to cache if offline
+                const cache = await caches.open(CACHE_NAME);
+                const cachedResponse = await cache.match(event.request, {ignoreVary: true});
+                return cachedResponse;
+            }
         })()
         );
     }
