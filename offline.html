@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Homepage for Cory Chung's personal portfolio showcasing various projects.">
+    <title>Cory's Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load theme from local storage (inline JS to reduce cache size)-->
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        function setTheme(theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+        }
+        setTheme(savedTheme ? savedTheme : "light");
+    </script>
+  </head>
+  <body>
+    <main>
+        <h1>You're offline!</h1>
+        <p>You're currently offline! Get back online to see my site!</p>
+    </main>
+  </body>
+</html>
